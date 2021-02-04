@@ -13,7 +13,7 @@ public class Game extends Canvas implements Runnable {
 	private static Snake snake;
 	private boolean running = false;
 	public static boolean pause = false;
-	private boolean gridEnable = true;
+	public static boolean gridEnable = true;
 	
 	public static Handler handler;
 	public static Random r;
