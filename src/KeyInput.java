@@ -47,10 +47,13 @@ public class KeyInput extends KeyAdapter {
 		}
 		
 		if (key == KeyEvent.VK_ESCAPE) System.exit(1);
+		
 		if (key == KeyEvent.VK_R) {
 			Game.restartPoint();
 			Game.beginningPoint();
 		}
+		
+		if (key == KeyEvent.VK_E) Game.gridEnable = !Game.gridEnable;
 		
 	}
 	
