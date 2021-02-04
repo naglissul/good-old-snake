@@ -103,7 +103,7 @@ public class Snake extends GameObject {
 					}
 				}
 			}
-			if (count == 2) {
+			if (count == 5) {
 				randX = Game.r.nextInt(Game.FRAME_WIDTH-16)+10;
 				randY = Game.r.nextInt(Game.FRAME_HEIGHT-16)+10;
 				Game.handler.addObject(new Food(randX, randY, ID.BigFood));
