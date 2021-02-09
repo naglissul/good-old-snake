@@ -30,7 +30,7 @@ public class Level1 extends GameState {
 	
 	private int randX, randY;
 
-	public Random r;//to prevent from shortage of possible-to-use random numbers
+	public Random r;
 	
 	
 	public void init() {
