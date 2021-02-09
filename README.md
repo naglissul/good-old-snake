@@ -10,4 +10,4 @@ Snake can go through the walls!
 
 ## In progess...
 Still working on...\
-Evniroment is set for additional levels creation
+Environment is set for additional levels creation
