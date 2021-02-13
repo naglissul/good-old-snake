@@ -8,12 +8,15 @@ public abstract class GameState {
 	
 	GameState(StateHandler handler) {
 		this.handler = handler;
+		init();
 	}
+	
 	public abstract void init();
 	public abstract void render(Graphics g);
 	public abstract void tick();
 	public abstract void keyPressed(int key);
+	
 	public int grid(int a) {
-		return a*16;
+		return a * 16;
 	}
 }

@@ -4,7 +4,6 @@ import java.awt.Graphics;
 
 public class MainMenu extends GameState {
 	
-	
 	public MainMenu(StateHandler handler) {
 		super(handler);
 		// TODO Auto-generated constructor stub
@@ -33,7 +32,5 @@ public class MainMenu extends GameState {
 		// TODO Auto-generated method stub
 		
 	}
-
-
 
 }

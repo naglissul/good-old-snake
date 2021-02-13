@@ -22,12 +22,21 @@ public class StateHandler {
 	}
 	
 	public void setState(StateName state) {
-		if (state == StateName.MAINMENU) currState = new MainMenu(this);
-		if (state == StateName.LEVEL1) currState = new Level1(this);
-		if (state == StateName.LEVEL2) currState = new Level2(this);
-		if (state == StateName.GAMEOVER) currState = new GameOver(this);
-		if (state == StateName.CHOOSESPEED) currState = new ChooseSpeed(this);
-		currState.init();
+		if (state == StateName.MAINMENU) {
+			currState = new MainMenu(this);
+		}
+		if (state == StateName.LEVEL1) {
+			currState = new Level1(this);
+		}
+		if (state == StateName.LEVEL2) {
+			currState = new Level2(this);
+		}
+		if (state == StateName.GAMEOVER) {
+			currState = new GameOver(this);
+		}
+		if (state == StateName.CHOOSESPEED) {
+			currState = new ChooseSpeed(this);
+		}
 	}
 	
 	public void tick() {

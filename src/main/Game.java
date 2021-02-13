@@ -80,13 +80,13 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		bs.show();
 	}
 	
-	public static int clamp(int var, int min, int max) {
-		if (var >= max)
-			return var = max;
-		else if (var <= min) 
-			return var = min;
+	public static int clamp(int a, int min, int max) {
+		if (a >= max)
+			return a = max;
+		else if (a <= min) 
+			return a = min;
 		else
-			return var;
+			return a;
 	}
 	
 	public static void main(String[] args) {

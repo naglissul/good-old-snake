@@ -9,14 +9,13 @@ import main.Game;
 
 
 public class Snake extends GameObject {
-	public static int bFFreq = 5;
-	public static boolean dead = false;
+	
+	public static int bigFoodFreq = 5;
 	public static int count = 0;
 	public int oldX;
 	public int oldY;
 	private Level1 levelHandler;
 
-	
 	public Snake(int x, int y, Level1 levelHandler) {
 		super(x, y);
 		velX = 1;
@@ -37,7 +36,7 @@ public class Snake extends GameObject {
 		//EDGES
 		checkEdges();
 
-		//COLLISION WITH FOOD - 
+		//COLLISION WITH FOOD
 		eat();
 		
 		//COLLISION WITH TAIL
@@ -46,43 +45,51 @@ public class Snake extends GameObject {
 	}
 	
 	protected void checkEdges() {
-		if (x > levelHandler.FRAME_WIDTH) x = 1;
-		if (x < 1) x = levelHandler.FRAME_WIDTH;
-		if (y > levelHandler.FRAME_HEIGHT) y = 1;
-		if (y < 1) y = levelHandler.FRAME_HEIGHT;
+		if (x > levelHandler.FRAME_WIDTH) {
+			x = 1;
+		}
+		if (x < 1) {
+			x = levelHandler.FRAME_WIDTH;
+		}
+		if (y > levelHandler.FRAME_HEIGHT) {
+			y = 1;
+		}
+		if (y < 1) {
+			y = levelHandler.FRAME_HEIGHT;
+		}
 		
 	}
 	
 	private void eat() {
 		for (int i = 0; i < levelHandler.objects.size(); i++) {
 			GameObject tempObject = levelHandler.objects.get(i);
+			
+			// Eat small food
 			if (tempObject.getId() == ID.Food && getBounds().intersects(tempObject.getBounds())) {
 				levelHandler.removeObject(tempObject);
-
 				levelHandler.addFood(ID.Food);
-				
 				count++;
-				levelHandler.score += Game.speed/5;
-				levelHandler.tailReserve += Game.speed/5;
-				
+				levelHandler.score += Game.speed / 5;
+				levelHandler.tailReserve += Game.speed / 5;
 			}
+			
+			// Eat BigFood
 			if (tempObject.getId() == ID.BigFood && getBounds().intersects(tempObject.getBounds())) {
 				levelHandler.removeObject(tempObject);
-				
-				levelHandler.score += BigFoodTime.foodLeft/5;
-				levelHandler.tailReserve += BigFoodTime.foodLeft/5;
 				for (int g = 0; g < levelHandler.objects.size(); g++) {
 					GameObject t2 = levelHandler.objects.get(g);
 					if (t2.getId() == ID.BigFoodTime) {
+						levelHandler.score += BigFoodTime.foodLeft / 5;
+						levelHandler.tailReserve += BigFoodTime.foodLeft / 5;
 						BigFoodTime.foodLeft = 150;
 						levelHandler.removeObject(t2);
 					}
 				}
-								
 			}
+			
+			// BigFood time's over
 			if (tempObject.getId() == ID.BigFoodTime) {
 				if (BigFoodTime.foodLeft <= 0) {
-					BigFoodTime.foodLeft = 150;
 					levelHandler.removeObject(tempObject);
 					for (int g = 0; g < levelHandler.objects.size(); g++) {
 						GameObject t2 = levelHandler.objects.get(g);
@@ -92,7 +99,9 @@ public class Snake extends GameObject {
 					}
 				}
 			}
-			if (count == bFFreq) {
+			
+			// It's time for BigFood
+			if (count == bigFoodFreq) {
 				levelHandler.addFood(ID.BigFood);
 				levelHandler.addObject(new BigFoodTime(20, 20));
 				count = 0;
@@ -130,6 +139,7 @@ public class Snake extends GameObject {
 	public int getOldX() {
 		return oldX;
 	}
+	
 	public int getOldY() {
 		return oldY;
 	}

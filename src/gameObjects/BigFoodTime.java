@@ -6,17 +6,17 @@ import java.awt.Rectangle;
 import main.Game;
 
 public class BigFoodTime extends GameObject {
+	
 	public static int foodLeft = 150;
+	
 	public BigFoodTime(int x, int y) {
 		super(x, y);
 		id = ID.BigFoodTime;
-		
-		
 	}
 
 	@Override
 	public void tick() {
-		foodLeft -= Game.speed/5;
+		foodLeft -= Game.speed / 5;
 	}
 
 	@Override
@@ -30,5 +30,5 @@ public class BigFoodTime extends GameObject {
 	public Rectangle getBounds() {
 		return null;
 	}
-
+	
 }
