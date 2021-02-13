@@ -9,7 +9,7 @@ public class StateHandler {
 	public GameState currState;
 	
 	public StateHandler() {
-		currState = new Level1(this);
+		setState(StateName.MAINMENU);
 	}
 	
 	private void generalSuff(int key) {

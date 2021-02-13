@@ -5,7 +5,12 @@ Basic snake game with Java
 Arrow keys to control the snake\
 P - pause\
 R - restart\
-E - disable/enable grid\
+E - enable/disable grid\
+Esc - quit\
+### M - main menu: 
+Enter - select\
+Up and Down arrows - choose\
+\
 Snake can go through the walls!
 
 ## In progess...

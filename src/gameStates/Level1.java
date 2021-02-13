@@ -20,9 +20,10 @@ public class Level1 extends GameState {
 
 	public LinkedList<GameObject> objects;
 	public LinkedList<Tail> tail;
-	private Snake snake;
+	protected Snake snake;
 	
-	private boolean pause = false, gridEnable = false;
+	private boolean pause = false;
+	private static boolean gridEnable = false;
 	public final int FRAME_WIDTH = 37, FRAME_HEIGHT = 26;
 	private int frameX = 16, frameY = 16;
 	public int score = 0;
@@ -52,6 +53,10 @@ public class Level1 extends GameState {
 		
 		if (key == KeyEvent.VK_E) {
 			gridEnable = !gridEnable;
+		}
+		
+		if (key == KeyEvent.VK_M) {
+			handler.setState(StateName.MAINMENU);
 		}
 		
 		if (!pause) {

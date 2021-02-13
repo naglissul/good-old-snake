@@ -23,7 +23,6 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		
 		addKeyListener(this);
 		handler = new StateHandler();
-		handler.setState(StateName.LEVEL1);
 		new Window(WIDTH, HEIGHT, "SNAKE", this);
 	}
 	
@@ -48,7 +47,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		//game loop
 		long oldTime = System.currentTimeMillis();
 		while (running) {
-			if (System.currentTimeMillis() >= oldTime+1000/speed) {
+			if (System.currentTimeMillis() >= oldTime + 1000 / speed) {
 				tick();
 				render();
 				oldTime = System.currentTimeMillis();
