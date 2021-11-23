@@ -13,6 +13,5 @@ Up and Down arrows - choose\
 \
 Snake can go through the walls!
 
-## In progess...
-Still working on...\
-Environment is set for additional levels creation
+## Done
+Basic (no imaage rendering) but completed

@@ -28,11 +28,11 @@ public class StateHandler {
 		if (state == StateName.LEVEL1) {
 			currState = new Level1(this);
 		}
-		if (state == StateName.LEVEL2) {
-			currState = new Level2(this);
-		}
 		if (state == StateName.GAMEOVER) {
 			currState = new GameOver(this);
+		}
+		if (state == StateName.HELP) {
+			currState = new Help(this);
 		}
 		if (state == StateName.CHOOSESPEED) {
 			currState = new ChooseSpeed(this);

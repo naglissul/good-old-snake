@@ -11,13 +11,13 @@ public class MainMenu extends GameState {
 	
 	public MainMenu(StateHandler handler) {
 		super(handler);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void render(Graphics g) {
 		g.setColor(Color.WHITE);
 		g.drawString("Menu: " + options[currChoice], 280, 208);
+		g.drawString("UP and DOWN - choose. ENTER - select", 220, 250);
 	}
 
 	public void select() {
@@ -28,7 +28,7 @@ public class MainMenu extends GameState {
 			handler.setState(StateName.CHOOSESPEED);
 		}
 		if (currChoice == 2) {
-			handler.setState(StateName.GAMEOVER);
+			handler.setState(StateName.HELP);
 		}
 		if (currChoice == 3) {
 			System.exit(1);

@@ -20,7 +20,6 @@ public class Game extends Canvas implements Runnable, KeyListener {
 	public static int speed = 10;
 	
 	public Game() {
-		
 		addKeyListener(this);
 		handler = new StateHandler();
 		new Window(WIDTH, HEIGHT, "SNAKE", this);
@@ -91,10 +90,10 @@ public class Game extends Canvas implements Runnable, KeyListener {
 	public static void main(String[] args) {
 		new Game();
 	}
-	
+
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
+
 	}
 
 	@Override
@@ -104,7 +103,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+
 	}
-	
+
 }
